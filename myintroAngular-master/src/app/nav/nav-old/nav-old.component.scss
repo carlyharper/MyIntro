@@ -1,0 +1,52 @@
+@import './src/assets/styles/main';
+
+
+:host, app-nav-old{
+    // @include display_flex;
+    // flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: $full;
+    background-color: black;
+}
+
+.nav{
+    @include display_flex;
+    justify-content: space-between;
+    padding: 0.5rem;
+
+    .logo{
+        @include gflex(1);
+        height: 3rem;
+        @include display_flex;
+        justify-content: flex-start;
+        max-width: fit-content;
+        margin-right: 0.5rem;
+        @include notMobile{
+            max-width: initial;
+        }
+        img{
+            height: $full;
+            // width: $full;
+            object-fit: contain;
+        }
+    }
+    .search{
+        @include gflex(1);
+        input{
+            @include noDecoration;
+            text-align: center;
+            width: $full;
+            height: $full;
+            border: none;
+        }
+    }
+    .emptySpace{
+        @include gflex(1);
+        display: none;
+        @include notMobile{
+            display: initial;
+        }
+    }
+}

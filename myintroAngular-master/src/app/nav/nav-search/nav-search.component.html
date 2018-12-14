@@ -1,0 +1,17 @@
+<div id="page">
+  <div id="logoContainer" class="image" (click)="home()">
+    <img [src]="logo.image" [alt]="logo.alt">
+  </div>
+  <div id="searchContainer">
+    <input type="text" [placeholder]="search.placeholder" [(ngModel)]="searchQuery">
+  </div>
+  <div id="jobIconContainer" class="icon" (click)="jobs()">
+    <i class="material-icons">business_center</i>
+  </div>
+  <div id="notificationIconContainer" class="icon">
+    <i class="material-icons">notifications</i>
+  </div>
+  <div *ngIf="user" id="userProfileImageContainer" class="image" (click)="edit()" [style.height.px]="imageSize" [style.width.px]="imageSize" [style.max-width.px]="imageSize">
+    <img [src]="user.get('avatar')" [alt]="user.get('displayName')" (load)="resizeImage()" (window:resize)="resizeImage()">
+  </div>
+</div>

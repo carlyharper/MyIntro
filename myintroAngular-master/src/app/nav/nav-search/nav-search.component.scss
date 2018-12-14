@@ -1,0 +1,87 @@
+@import './src/assets/styles/main';
+:host, app-nav-search{
+    position: absolute;
+    height: $full;
+    width: $full;
+    background-color: black;
+    height: 4rem;
+
+    #page{
+        @include flex(1,1,0);
+        height: $full;
+        @include display_flex;
+    }
+
+    i,img{
+        @include noDS;
+        cursor: pointer;
+    }
+
+    i{
+        @include insetCard;
+    }
+
+
+    .image{
+        height: $full;
+        max-width: fit-content;
+        padding: 0.5rem;
+        img{
+            border-radius: 0.2rem;
+            height: $full;
+            object-fit: contain;
+        }
+    }
+
+    #userProfileImageContainer{
+        height: initial;
+        // max-width: ;
+        img{
+            border-radius: $circle;
+            width: $full;
+            object-fit: cover;
+        }
+    }
+
+    #searchContainer{
+        @include flex(1,1,0);
+        @include display_flex;
+        flex-direction: column;
+        padding: 0.5rem 0;
+        @include desktop{
+            padding: .5rem 10vw;
+        }
+        input{
+            @include noDecoration;
+            @include flex(1,1,0);
+            height: $full;
+            background-color: white;
+            border: none;
+            border-radius: 0.2rem;
+            font-size: 1.2rem;
+            padding: 0.5rem;
+            color: black;
+            width: $full;
+        }
+    }
+
+    .icon{
+        // @include flex(1,1,0);
+        max-width: fit-content;
+        @include display_flex;
+        align-items: center;
+        padding: 0 0.5rem;
+        i{
+            font-size: calc(1rem + 5vw);
+            @include notMobile{
+                font-size: 3rem;
+            }
+            
+            color: rgba(white, 0.4);
+        }
+    }
+
+    i{
+        color: white;
+    }
+}
